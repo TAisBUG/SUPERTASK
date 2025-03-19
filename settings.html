@@ -1,0 +1,113 @@
+<div id="objective_contents" class="objective-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <div class="flex-container alignitemscenter margin0">
+                <b data-i18n="ext_obj_title">超级目标</b>
+                <i id="objectiveExtensionPopoutButton" class="fa-solid fa-window-restore menu_button margin0"></i>
+            </div>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div id="objectiveExtensionDrawerContents">
+                <label for="objective-text"><small>输入目标并生成任务。AI将尝试自主完成任务</small></label>
+                <textarea id="objective-text" type="text" class="text_pole textarea_compact" rows="4"></textarea>
+                <div class="objective_block flex-container">
+                    <input id="objective-generate" class="menu_button" type="submit" value="自动生成任务" />
+                    <input id="objective-generate-more" class="menu_button" type="submit" value="生成更多任务" />
+                    <input id="objective-clear" class="menu_button" type="submit" value="清除任务" />
+                    <label class="checkbox_label"><input id="objective-hide-tasks" type="checkbox">隐藏任务</label>
+                </div>
+                <div id="objective-parent" class="objective_block flex-container">
+                    <i class="objective-task-button fa-solid fa-circle-left fa-2x" title="返回父任务"></i>
+                    <small>返回父任务</small>
+                </div>
+
+                <!-- Progress bar will be inserted here by JavaScript -->
+
+                <!-- Filter and sort controls will be inserted here by JavaScript -->
+
+                <div id="objective-tasks"> </div>
+                <div class="objective_block marginBottom10">
+                    <div class="objective_block objective_block_control flex1 flexFlowColumn">
+                        <label for="objective-chat-depth">在聊天中的位置</label>
+                        <input id="objective-chat-depth" class="text_pole widthUnset" type="number" min="0" max="99" />
+                    </div>
+                    <br>
+                    <div class="objective_block objective_block_control flex1">
+                        <label for="objective-check-frequency">任务检查频率</label>
+                        <input id="objective-check-frequency" class="text_pole widthUnset" type="number" min="0"
+                            max="99" />
+                        <small>(0 = 禁用)</small>
+                    </div>
+                </div>
+
+
+                <div class="objective_block_control flex-container alignitemscenter marginBottom10">
+                    <label class="checkbox_label"><input id="objective-swipes-decrement" type="checkbox">将滑动计入任务检查频率</label>
+                </div>
+
+                <span>距离下次AI任务完成检查还有 <span id="objective-counter">0</span> 条消息</span>
+
+                <div class="objective_block objective_block_control flex1 marginBottom10">
+                    <label for="objective-injection-frequency">任务注入频率</label>
+                    <input id="objective-injection-frequency" class="text_pole widthUnset" type="number" min="1"
+                        max="99" value="1" />
+                    <small>(任务注入之间的消息数)</small>
+                </div>
+
+                <div class="objective_block objective_block_control flex1 marginBottom10">
+                    <label for="objective-prompt-role">任务提示角色</label>
+                    <select id="objective-prompt-role" class="text_pole">
+                        <option value="assistant">助手</option>
+                        <option value="user">用户</option>
+                        <option value="system">系统</option>
+                    </select>
+                    <small>(任务如何注入到上下文中)</small>
+                </div>
+
+                <!-- Recently completed tasks settings -->
+                <div class="objective_block marginTop10">
+                    <div class="objective_block_control flex-container alignitemscenter">
+                        <label class="checkbox_label"><input id="objective-show-completed" type="checkbox">在提示中包含已完成任务</label>
+                    </div>
+                    <div class="objective_block_control flex-container alignitemscenter">
+                        <label for="objective-completed-count">要包含的已完成任务数量：</label>
+                        <input id="objective-completed-count" class="text_pole widthUnset" type="number" min="1"
+                            max="10" value="3" />
+                        <input id="objective-view-completed" class="menu_button" type="button" value="查看任务" />
+                        <input id="objective-purge-completed" class="menu_button" type="button" value="清除任务" />
+                    </div>
+                </div>
+
+                <!-- Upcoming tasks settings -->
+                <div class="objective_block marginTop10">
+                    <div class="objective_block_control flex-container alignitemscenter">
+                        <label class="checkbox_label"><input id="objective-show-upcoming" type="checkbox">在提示中包含即将到来的任务</label>
+                    </div>
+                    <div class="objective_block_control flex-container alignitemscenter">
+                        <label for="objective-upcoming-count">要包含的即将到来任务数量：</label>
+                        <input id="objective-upcoming-count" class="text_pole widthUnset" type="number" min="1" max="10"
+                            value="3" />
+                        <input id="objective-view-upcoming" class="menu_button" type="button" value="查看任务" />
+                        <input id="objective-purge-upcoming" class="menu_button" type="button" value="清除任务" />
+                    </div>
+                </div>
+
+                <!-- Task management buttons -->
+                <div class="objective_block flex-container flexWrap">
+                    <input id="objective_prompt_edit" class="menu_button" type="submit" value="管理提示" />
+                    <input id="objective_templates" class="menu_button" type="submit" value="管理模板" />
+                </div>
+
+                <!-- Export/Import and Statistics buttons -->
+                <div class="objective_block flex-container flexWrap marginTop10">
+                    <input id="objective_export" class="menu_button" type="submit" value="导出任务" />
+                    <input id="objective_import" class="menu_button" type="submit" value="导入任务" />
+                    <input id="objective_statistics" class="menu_button" type="submit" value="统计信息" />
+                </div>
+
+                <hr class="sysHR">
+            </div>
+        </div>
+    </div>
+</div>
